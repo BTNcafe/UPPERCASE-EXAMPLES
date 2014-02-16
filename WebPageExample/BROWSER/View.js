@@ -17,8 +17,8 @@ WebPageExample.View = CLASS({
 			style : {
 				fontSize : 50
 			},
-			childs : [SPAN({
-				childs : 'Hello UPPERCASE!'
+			children : [SPAN({
+				children : ['Hello UPPERCASE!']
 			})]
 		}).appendTo(BODY);
 
