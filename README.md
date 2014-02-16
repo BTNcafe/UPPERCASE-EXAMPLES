@@ -1,2 +1,3 @@
-UPPERCASE-EXAMPLES
+UPPERCASE EXAMPLES
 ==================
+UPPERCASE Examples Pack
