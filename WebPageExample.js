@@ -8,6 +8,6 @@ BOOT({
 		isDevMode : true
 	},
 	SERVER_CONFIG : {
-		isNotUsingDB : true
+		isNotUseDB : true
 	}
 });

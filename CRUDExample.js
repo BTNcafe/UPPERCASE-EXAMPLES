@@ -1,13 +1,12 @@
-// run: nodemon WebPageExample.js
-
 require('./UPPERCASE/BOOT.js');
 
 BOOT({
 	CONFIG : {
-		defaultBoxName : 'EventExample',
+		defaultBoxName : 'CRUDExample',
 		isDevMode : true
 	},
 	SERVER_CONFIG : {
-		isNotUseDB : true
+		dbName : 'CRUDExample-test',
+		isNotRequireDBAuth : true
 	}
 });
