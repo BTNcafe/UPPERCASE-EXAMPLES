@@ -7,6 +7,6 @@ BOOT({
 	},
 	SERVER_CONFIG : {
 		dbName : 'CRUDExample-test',
-		isNotRequireDBAuth : true
+		isNotRequiringDBAuth : true
 	}
 });
