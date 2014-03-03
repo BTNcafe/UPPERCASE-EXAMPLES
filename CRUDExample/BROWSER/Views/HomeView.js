@@ -329,7 +329,7 @@ CRUDExample.HomeView = CLASS({
 			});
 		};
 
-		articleModel.findDatasWatching({
+		articleModel.findDataSetWatching({
 			sort : {
 				createTime : -1
 			}
@@ -337,7 +337,7 @@ CRUDExample.HomeView = CLASS({
 
 			if (result.hasError === false) {
 
-				EACH(result.savedDatas, function(data) {
+				EACH(result.savedDataSet, function(data) {
 
 					var
 					// id
