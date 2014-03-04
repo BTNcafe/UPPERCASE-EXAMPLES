@@ -329,6 +329,37 @@ CRUDExample.HomeView = CLASS({
 			});
 		};
 
+		articleModel.onNewWatching(function(data, addUpdateHandler, addRemoveHandler, closeWatching) {
+
+			var
+			// id
+			id = data.id,
+
+			// add article item.
+			addArticleItem = function(data) {
+
+				// add item.
+				list.addItem({
+					isFirst : true,
+					key : id,
+					item : ArticleItem(data, {
+						update : update,
+						remove : remove
+					})
+				});
+			};
+
+			addArticleItem(data);
+
+			// when update data.
+			addUpdateHandler(addArticleItem);
+
+			// when remove data.
+			addRemoveHandler(function() {
+				list.removeItem(id);
+			});
+		});
+
 		articleModel.findDataSetWatching({
 			sort : {
 				createTime : -1
