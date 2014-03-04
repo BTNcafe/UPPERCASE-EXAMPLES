@@ -1,9 +1,11 @@
 VERSIONS
 ========
-1.2.10 (working)
+1.2.10 (2014. 3. 4)
 - DELAY func에 delay를 pass
 - MODEL getName
-- (working) 각 DOM마다 필요한 event를 on{Event Name}으로 설정할 수 있도록 (예: input은 onChagne, onKeydown, onKeyup 등)
+- datas -> dataSet으로 모두 변경
+- 각 DOM마다 필요한 event를 on{Event Name}으로 설정할 수 있도록 (예: input은 onChagne, onKeydown, onKeyup 등)
+- CHECK_IS_EMPTY_DATA 추가
 
 1.2.9 (2014. 3. 2)
 - CONNECTING(BROWSER_CONFIG.createConnectingPanel), DISCONNECTED(BROWSER_CONFIG.createDisconnectedPanel) 커스터마이징 기능 추가
