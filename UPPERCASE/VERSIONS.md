@@ -1,5 +1,26 @@
 VERSIONS
 ========
+1.2.13 (2014. 3. 17)
+- meta description 기능 추가 (CONFIG.discription으로 설정)
+- 웹 이외의 타 플랫폼 공식 지원
+- BROWSER_CONFIG isMobileFullScreen -> CONFIG로 이전
+- isDevMode가 true일 때 DB 로그 출력
+- createData와 createDataSafely가 createData로, updateData와 updateDataSafely가 updateData로, removeData와 removeDataSafely가 removeData로 통합
+
+1.2.12 (2014. 3. 14)
+- 1.2.11에서 업그레이드 시 반드시 MongoDB Shell에서 모든 컬렉션에 대해 다음 명령을 실행해 주시기 바랍니다. 컬렉션.update({_isEnable : true}, { $set : {__IS_ENABLED : true} }, false, true)
+- IE8 호환성 보기 버튼 제거
+- BROWSER_CONFIG isMobileFullScreen 설정 추가
+- IE5.5 iepngfix_tilebg 버그 제거
+- createValid, updateValid 없을 경우 발생하는 MODEL에서의 오류 해결
+
+1.2.11 (2014. 3. 11)
+- FIRE_ALL
+- 기본 css에 overflow-scrolling: touch 설정 추가
+- Form Submit Event 버그 개선
+- COMMON/LOOP -> BROWSER/LOOP로 이전
+- VALID each -> property, is -> equal로 변경
+
 1.2.10 (2014. 3. 4)
 - DELAY func에 delay를 pass
 - MODEL getName
