@@ -1,6 +1,6 @@
 // run: nodemon WebPageExample.js
 
-require('./UPPERCASE/BOOT.js');
+require('./UPPERCASE.IO/BOOT.js');
 
 BOOT({
 	CONFIG : {
