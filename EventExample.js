@@ -7,7 +7,7 @@ BOOT({
 		defaultBoxName : 'EventExample',
 		isDevMode : true
 	},
-	SERVER_CONFIG : {
+	NODE_CONFIG : {
 		isNotUsingDB : true
 	}
 });

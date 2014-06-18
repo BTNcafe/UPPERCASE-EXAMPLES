@@ -29,14 +29,14 @@ CRUDExample.HomeView = CLASS({
 		close;
 
 		wrapper = DIV({
-			children : [
+			c : [
 
 			// title
 			H1({
 				style : {
 					fontSize : 30
 				},
-				children : ['UPPERCASE CRUD Example (Realtime!!)']
+				c : ['UPPERCASE CRUD Example (Realtime!!)']
 			}),
 
 			// valid form
@@ -69,14 +69,14 @@ CRUDExample.HomeView = CLASS({
 						}
 					}
 				},
-				children : [
+				c : [
 
 				// form title
 				H3({
 					style : {
 						fontSize : 20
 					},
-					children : ['Article Form']
+					c : ['Article Form']
 				}),
 
 				// title input
@@ -102,48 +102,50 @@ CRUDExample.HomeView = CLASS({
 					value : 'Done!'
 				})],
 
-				onSubmit : function(e, form) {
+				on : {
+					submit : function(e, form) {
 
-					var
-					// loading
-					loading = UUI.LOADING({
-						wrapperStyle : {
-							backgroundColor : RGBA([0, 0, 0, 0.5])
-						},
-						contentStyle : {
-							padding : 20
-						},
-						msg : 'Loading...'
-					});
+						var
+						// loading
+						loading = UUI.LOADING({
+							wrapperStyle : {
+								backgroundColor : RGBA([0, 0, 0, 0.5])
+							},
+							contentStyle : {
+								padding : 20
+							},
+							msg : 'Loading...'
+						});
 
-					// create article.
-					articleModel.create(form.getData(), function(result) {
+						// create article.
+						articleModel.create(form.getData(), function(result) {
 
-						loading.remove();
+							loading.remove();
 
-						// when error.
-						if (result.hasError === true) {
-							form.showErrors(result.errors);
-						}
+							// when error.
+							if (result.hasError === true) {
+								form.showErrors(result.errors);
+							}
 
-						// when success.
-						else {
+							// when success.
+							else {
 
-							// clear form.
-							form.setData({});
+								// clear form.
+								form.setData({});
 
-							// notice done.
-							UUI.NOTICE({
-								wrapperStyle : {
-									backgroundColor : RGBA([0, 0, 0, 0.5])
-								},
-								contentStyle : {
-									padding : 20
-								},
-								msg : 'Done!'
-							});
-						}
-					});
+								// notice done.
+								UUI.NOTICE({
+									wrapperStyle : {
+										backgroundColor : RGBA([0, 0, 0, 0.5])
+									},
+									contentStyle : {
+										padding : 20
+									},
+									msg : 'Done!'
+								});
+							}
+						});
+					}
 				}
 			}),
 
@@ -165,7 +167,7 @@ CRUDExample.HomeView = CLASS({
 				contentStyle : {
 					padding : 20
 				},
-				children : [
+				c : [
 
 				// valid form
 				form = UUI.VALID_FORM({
@@ -192,14 +194,14 @@ CRUDExample.HomeView = CLASS({
 							}
 						}
 					},
-					children : [
+					c : [
 
 					// form title
 					H3({
 						style : {
 							fontSize : 20
 						},
-						children : ['Article Form']
+						c : ['Article Form']
 					}),
 
 					// title input
@@ -225,52 +227,54 @@ CRUDExample.HomeView = CLASS({
 						value : 'Done!'
 					})],
 
-					onSubmit : function(e, form) {
+					on : {
+						submit : function(e, form) {
 
-						var
-						// new data
-						newData = form.getData(),
+							var
+							// new data
+							newData = form.getData(),
 
-						// loading
-						loading = UUI.LOADING({
-							wrapperStyle : {
-								backgroundColor : RGBA([0, 0, 0, 0.5])
-							},
-							contentStyle : {
-								padding : 20
-							},
-							msg : 'Loading...'
-						});
+							// loading
+							loading = UUI.LOADING({
+								wrapperStyle : {
+									backgroundColor : RGBA([0, 0, 0, 0.5])
+								},
+								contentStyle : {
+									padding : 20
+								},
+								msg : 'Loading...'
+							});
 
-						newData.id = data.id;
+							newData.id = data.id;
 
-						// update article.
-						articleModel.update(newData, function(result) {
+							// update article.
+							articleModel.update(newData, function(result) {
 
-							loading.remove();
+								loading.remove();
 
-							// when error.
-							if (result.hasError === true) {
-								form.showErrors(result.errors);
-							}
+								// when error.
+								if (result.hasError === true) {
+									form.showErrors(result.errors);
+								}
 
-							// when success.
-							else {
+								// when success.
+								else {
 
-								modal.remove();
+									modal.remove();
 
-								// notice done.
-								UUI.NOTICE({
-									wrapperStyle : {
-										backgroundColor : RGBA([0, 0, 0, 0.5])
-									},
-									contentStyle : {
-										padding : 20
-									},
-									msg : 'Done!'
-								});
-							}
-						});
+									// notice done.
+									UUI.NOTICE({
+										wrapperStyle : {
+											backgroundColor : RGBA([0, 0, 0, 0.5])
+										},
+										contentStyle : {
+											padding : 20
+										},
+										msg : 'Done!'
+									});
+								}
+							});
+						}
 					}
 				}), UUI.BUTTON_H({
 					style : {
@@ -299,8 +303,8 @@ CRUDExample.HomeView = CLASS({
 				contentStyle : {
 					padding : 20
 				},
-				children : [P({
-					children : ['Really remove [' + data.title + ']?']
+				c : [P({
+					c : ['Really remove [' + data.title + ']?']
 				}), UUI.BUTTON_H({
 					style : {
 						backgroundColor : '#DE514C',
@@ -360,7 +364,7 @@ CRUDExample.HomeView = CLASS({
 			});
 		});
 
-		articleModel.findDataSetWatching({
+		articleModel.findWatching({
 			sort : {
 				createTime : -1
 			}

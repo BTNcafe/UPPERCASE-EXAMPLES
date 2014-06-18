@@ -1,1 +1,0 @@
-RUN(function(){"use strict";var n=function(n){document.write('<script src="/UPPERCASE.IO/R/BROWSER_FIX/ANDROID/'+n+'.js"></script>')};global.ANDROID={},/Android\s([0-9\.]*)/.exec(navigator.userAgent),ANDROID.version=REAL(RegExp.$1),ANDROID.version<4.4&&(CONFIG.transports=["jsonp-polling"]),n("INFO"),ANDROID.version<3&&n("ADD_STYLE")});

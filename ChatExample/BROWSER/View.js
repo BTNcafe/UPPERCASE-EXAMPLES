@@ -24,7 +24,7 @@ ChatExample.View = CLASS({
 
 		div = DIV({
 
-			children : [
+			c : [
 
 			// list
 			list = UL({
@@ -40,23 +40,25 @@ ChatExample.View = CLASS({
 					bottom : 0,
 					width : '100%'
 				},
-				children : [UUI.FULL_INPUT({
+				c : [UUI.FULL_INPUT({
 					name : 'msg',
 					placeholder : 'Message.'
 				})],
-				onSubmit : function(e, form) {
-					room.send({
-						methodName : 'msg',
-						data : form.getData()
-					});
-					form.setData('');
+				on : {
+					submit : function(e, form) {
+						room.send({
+							methodName : 'msg',
+							data : form.getData()
+						});
+						form.setData('');
+					}
 				}
 			})]
 		}).appendTo(BODY);
 
 		room.on('msg', function(data) {
 			list.append(LI({
-				children : [data.msg]
+				c : [data.msg]
 			}));
 		});
 

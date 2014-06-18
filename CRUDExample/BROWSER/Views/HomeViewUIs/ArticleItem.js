@@ -33,20 +33,20 @@ CRUDExample('HomeView').ArticleItem = CLASS({
 
 		// content
 		self.append(DIV({
-			children : [
+			c : [
 
 			// title
 			H3({
 				style : {
 					fontSize : 15
 				},
-				children : [data.title, SPAN({
+				c : [data.title, SPAN({
 					style : {
 						marginLeft : 10,
 						fontSize : 12,
 						color : '#999'
 					},
-					children : [createTimeCalendar.getYear() + '-' + createTimeCalendar.getMonth() + '-' + createTimeCalendar.getDate() + ' ' + createTimeCalendar.getHour() + ':' + createTimeCalendar.getMinute() + ':' + createTimeCalendar.getSecond()]
+					c : [createTimeCalendar.getYear() + '-' + createTimeCalendar.getMonth() + '-' + createTimeCalendar.getDate() + ' ' + createTimeCalendar.getHour() + ':' + createTimeCalendar.getMinute() + ':' + createTimeCalendar.getSecond()]
 				})]
 			}),
 
@@ -56,7 +56,7 @@ CRUDExample('HomeView').ArticleItem = CLASS({
 					marginTop : 10,
 					marginBottom : 10
 				},
-				children : [data.content]
+				c : [data.content]
 			})]
 		}));
 

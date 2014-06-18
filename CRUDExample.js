@@ -5,7 +5,7 @@ BOOT({
 		defaultBoxName : 'CRUDExample',
 		isDevMode : true
 	},
-	SERVER_CONFIG : {
+	NODE_CONFIG : {
 		dbName : 'CRUDExample-test',
 		isNotRequiringDBAuth : true
 	}

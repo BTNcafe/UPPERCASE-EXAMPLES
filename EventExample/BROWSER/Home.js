@@ -17,8 +17,8 @@ EventExample.Home = CLASS({
 			style : {
 				fontSize : 50
 			},
-			children : [SPAN({
-				children : ['Touch me Touch me Touch me now!']
+			c : [SPAN({
+				c : ['Touch me Touch me Touch me now!']
 			})],
 
 			// event1
